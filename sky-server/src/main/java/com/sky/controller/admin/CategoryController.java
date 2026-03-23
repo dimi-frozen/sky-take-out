@@ -84,7 +84,7 @@ public class CategoryController {
      */
     @PostMapping("/status/{status}")
     @ApiOperation("启用禁用分类")
-    public Result<String> startOrStop(@PathVariable("status") Integer status, Long id){
+    public Result<String> startOrStop(@PathVariable("status") Integer status, Long id){//@PathVariable 只有参数名不同时才需要在括号里声明，如果参数名相同只需@PathVariable
         categoryService.startOrStop(status,id);
         return Result.success();
     }
